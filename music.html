@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>JavaJam Coffee House</title>
+<meta charset = "utf-8">
+<style>
+    body{background:linear-gradient( 135deg, 
+        #C5A25E 25%, #FFF7BA 0, #FFF7BA 50%, #C5A25E 0, #C5A25E 75%, #FFF7BA 0
+            );
+        background-size:3px 3px; 
+        font-family: Verdana, Arial, sans-serif;
+    }
+    header{ background-image:url("header.JPG");
+            text-align:center;
+            padding: 10px;
+    }
+    #wrapper{background-color:#e2d2b0;margin:auto;width:80%; min-width:850px;}
+    
+    #rightcolumn{ margin-left: 150px;
+                color:#2E0000;
+                background-color:#F5F5DD;}
+    #leftcolumn{color: #ffce99;
+                float:left;
+                width: 150px;
+                background-image: url("left.JPG");
+                list-style-type:none;font-weight:bold;}
+    ul a{text-decoration:none;
+        font-weight:bold;
+        text-align:center;}
+    nav ul { list-style-type: none;}
+    a:link{color:#994f00;}
+    a:visited{color:#C4AA87;}
+    h1{font-style: bold;
+        padding-left: 10px}
+    
+    footer{ float:bottom;
+            text-align: center;
+            clear:left;
+            padding-top:20px;
+            padding-bottom:20px;
+            background-image: url("header.JPG");
+    }	
+    .table2{width:500px;border:0;margin-left:auto;margin-right:auto;}
+    th{text-align:left;background-image: url("left.JPG");
+    }
+    td{padding: 2px 10px 2px 30px;}
+    .img {
+    max-width: 70%;
+    height: auto;
+    padding-top:12px;
+    padding-bottom: 5px;}
+    .content {padding: 2px 20px 0 20px; 
+    } 
+    audio{padding:1px;}
+    #floatleft { margin: 5px;
+                    float: left;
+    }
+    .right{margin: 1px 2px 1px 145px;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1><img src= "titlename.JPG" alt= "JaveJam Coffee House" width="700"height="86"></h1>
+    </header>
+    <div id="leftcolumn">
+        <nav><ul>
+            <li><a href = "index.html">Home</a></li>
+            <li><a href = "menu.html">Menu</a> </li>
+            <li><a href = "music.html">Music</a></li>
+            <li><a href = "jobs.html">Jobs</a></li>
+            <li><a href = "productpriceupdate.php">Product Price Update</a></li>
+            <li><a href = "dailysalesreport.php">Daily Sales Report</a></li>
+        </ul></nav>
+    </div>
+<div id="rightcolumn">
+    <div class="content">
+        <h2>Music at JavaJam</h2>
+        <p>The first Friday night each month at JavaJam is a special night. 
+            Join us from 8pm to 11pm for some music you won't want to miss.</p>
+    </div>
+    <div>
+    <table class="table2">
+        <tr>
+            <th>JANUARY</th>
+        </tr>
+        <tr>
+        <td>
+            <div id="floatleft"><img class = "img" src="pic_a.JPG"></div>
+            <div class="right">
+                <p>Melanie Morris entertains with her melodic folk style.<br>
+                CDs are now available.</p>
+                <p><audio controls>
+                    <source src="Boy With Luv.mp3" type="audio/ogg">
+                </audio>
+                </p>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <th>FEBRUARY</th>
+        </tr>
+        <tr>
+            <td>
+                <div id="floatleft"><img class = "img" src="pic_b.JPG"></div>
+                <div class="right">
+                    <p>Tahoe Greg is back from his tour.<br>
+                    New songs.<br>
+                    New stories.<br>
+                    CDs are now available.</p>
+                    <p><audio height="20" controls>
+                        <source src="fire.mp3" type="audio/ogg">
+                    </audio>
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+<footer>
+    <small><i>Copyright &copy; 2014 JavaJam Coffee House <br> 
+    <a href = "mailto:yanyuan@li.com">yanyuan@li.com</a></i></small>
+</footer>
+</div>
+</body> 
+</html>

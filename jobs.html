@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title> JavaJam Coffee House</title>
+<meta charset = "utf-8">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1><img src= "titlename.JPG" alt= "JaveJam Coffee House" width="700"height="86"></h1>
+    </header>
+    <div id="leftcolumn">
+        <nav><ul>
+            <li><a href = "index.html">Home</a></li>
+            <li><a href = "menu.html">Menu</a> </li>
+            <li><a href = "music.html">Music</a></li>
+            <li><a href = "jobs.html">Jobs</a></li>
+            <li><a href = "productpriceupdate.php">Product Price Update</a></li>
+            <li><a href = "dailysalesreport.php">Daily Sales Report</a></li>
+        </ul></nav>
+    </div>
+    <div id="rightcolumn"> 
+        <div class="content">
+        <h2>Jobs at JavaJam</h2>
+        <p class ="job">Want to work at JavaJam? Fill out the form below to start your application. 
+            Required fields are marked with an asterisk*</p>
+        </div>
+        <form action="show_get.php" method="GET" id = "submitForm">
+            <div>
+            <label for ="myName">*Name:</label> 
+            <input type="text" name="myName" id="myName" required onchange = "checkName()">
+            </div>
+            <div>
+            <label for ="myEmail">*Email:</label>
+            <input type="email" name="myEmail" id="myEmail" required onchange = "checkEmail()">
+            </div>
+            <div><label for ="myDate">Start Date:</label>
+            <input type ="date" name="myDate" id="myDate" onchange = "checkDate()"> 
+            </div>
+            <div>
+            <label for ="experience">*Experience:</label>
+            <textarea name="experience" id= "experience" rows="2" cols="20"required></textarea>            
+            </div>
+            <p><input type="submit" value="Apply Now" onclick ="validateForm()"></p>
+        </form>
+        
+    </div>
+
+    <footer>
+        <small><i>Copyright &copy; 2014 JavaJam Coffee House <br> 
+        <a href="mailto:yanyuan@li.com">yanyuan@li.com</a></i></small>
+    </footer>
+</div>
+</body> 
+<script type="text/javascript">
+
+window.onload = init;
+/*function init(){
+    if(document&& document.getElementById){
+        var submitForm = document.getElementById("submitForm");
+        submitForm.onsubmit = validateForm();
+    }
+} */
+function validateForm()
+{
+    a = checkEmail();
+    b = checkName();
+    c = checkDate();
+    d = a&&b&&c;
+    return d;
+}
+function checkEmail()
+{
+    var formalEmail = /^[a-z0-9A-Z\.-]+@([a-zA-Z0-9]+\.){1,3}[a-zA-Z0-9]{2,3}$/;
+    var myemail = document.getElementById("myEmail").value;
+    p = formalEmail.test(myemail);
+    if ( p==false ){
+        alert("Please re-enter the email with at least 2-3 domain name \n and last domain name be 2-3 charchter  ");
+}
+    return p;
+}
+function checkName()
+{
+    var myname = document.getElementById("myName").value;
+    var formalName = /^[a-zA-Z]+(\s[a-zA-Z]+)+$/;
+    p = formalName.test(myname);
+    if ( p==false ){
+        alert("Please re-enter the name");
+    }
+    return p;
+    
+}
+function checkDate(){
+    //today
+    var now = new Date();
+	var nowYear = now.getFullYear();
+    var nowMonth = now.getMonth()+1; 
+    var nowDate = now.getDate();
+    //chosen date
+    var chosenDate = document.getElementById("myDate").value;
+    chosenDate = Number(chosenDate.replace(/\D/g,""));
+
+	function Appendzero(obj)
+    {
+        if(obj<10) return "0" +""+ obj;
+        else return obj;
+    }
+	nowMonth= Appendzero(nowMonth);
+	nowDate= Appendzero(nowDate);
+    today = Number (nowYear.toString()+nowMonth.toString()+nowDate.toString());
+    return compare(today,chosenDate);
+}
+function compare(a,b){
+    if (a>b){
+        alert("Please choose from today onwards");
+        x = false;
+    }
+    else{
+        x = true;
+    }
+    return x;
+}
+</script>
+</html>
